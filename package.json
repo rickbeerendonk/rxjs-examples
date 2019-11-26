@@ -1,0 +1,30 @@
+{
+  "name": "rxjs-examples",
+  "version": "1.0.0",
+  "description": "Examples for RxJS",
+  "author": "Rick Beerendonk",
+  "license": "EUPL-1.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickbeerendonk/rxjs-examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rickbeerendonk/rxjs-examples/issues"
+  },
+  "homepage": "https://github.com/rickbeerendonk/rxjs-examples#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier",
+      "pre-push": "npm run prettier"
+    }
+  },
+  "scripts": {
+    "prettier": "prettier --list-different '**/*.{json,ts}'",
+    "prettier-fix": "prettier --write '**/*.{json,ts}'"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "rxjs": "^6.5.3"
+  }
+}
