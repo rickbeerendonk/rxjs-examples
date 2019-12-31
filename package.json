@@ -19,8 +19,8 @@
     }
   },
   "scripts": {
-    "prettier": "prettier --list-different '**/*.{json,ts}'",
-    "prettier-fix": "prettier --write '**/*.{json,ts}'"
+    "prettier": "prettier --list-different '**/*.{json,js,md,ts}'",
+    "prettier-fix": "prettier --write '**/*.{json,js,md,ts}'"
   },
   "devDependencies": {
     "husky": "3.1.0",
