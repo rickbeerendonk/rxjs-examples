@@ -23,8 +23,8 @@
     "prettier-fix": "prettier --write '**/*.{json,ts}'"
   },
   "devDependencies": {
-    "husky": "^3.1.0",
-    "prettier": "^1.19.1",
-    "rxjs": "^6.5.3"
+    "husky": "3.1.0",
+    "prettier": "1.19.1",
+    "rxjs": "6.5.4"
   }
 }
