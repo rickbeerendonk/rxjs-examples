@@ -1,0 +1,6 @@
+combineAll
+concatAll
+exhaust
+mergeAll
+startWith
+withLatestFrom
