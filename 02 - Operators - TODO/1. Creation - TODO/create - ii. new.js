@@ -1,9 +1,9 @@
 /*! European Union Public License version 1.2 !*/
-/*! Copyright © 2019 Rick Beerendonk          !*/
+/*! Copyright © 2021 Rick Beerendonk          !*/
 
 const { Observable } = require('../../node_modules/rxjs');
 
-const obs = Observable.create(function (observer) {
+const obs = new Observable(function(observer) {
   observer.next('One');
   observer.next('Two');
   observer.complete();
