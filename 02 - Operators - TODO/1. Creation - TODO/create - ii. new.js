@@ -3,7 +3,7 @@
 
 const { Observable } = require('../../node_modules/rxjs');
 
-const obs = new Observable(function(observer) {
+const obs = new Observable(function (observer) {
   observer.next('One');
   observer.next('Two');
   observer.complete();
