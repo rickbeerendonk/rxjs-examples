@@ -1,7 +1,7 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2020 Rick Beerendonk          !*/
 
-const { defer, from } = require('../../node_modules/rxjs');
+import { defer, from } from 'rxjs';
 
 const obs1 = from([1, 3, 5]);
 const obs2 = from([10, 20, 30]);

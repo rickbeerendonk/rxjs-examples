@@ -1,16 +1,22 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2020 Rick Beerendonk          !*/
 
-const { range } = require('../../node_modules/rxjs');
+import { from, merge } from 'rxjs';
 
-const obs = range(3);
+const obs1 = from([1, 3, 5]);
+const obs2 = from([2, 4, 6]);
+
+const obs = merge(obs1, obs2);
 
 obs.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });
 
-// 0
 // 1
+// 3
+// 5
 // 2
+// 4
+// 6
 // Complete!

@@ -1,7 +1,7 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2020 Rick Beerendonk          !*/
 
-const { generate } = require('../../node_modules/rxjs');
+import { generate } from 'rxjs';
 
 const obs = generate(
   0, // initial
