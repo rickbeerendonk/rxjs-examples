@@ -7,9 +7,9 @@ from
 fromEvent
 fromEventPattern
 generate
+iif
 interval
 of
 range
 throwError
 timer
-iif
