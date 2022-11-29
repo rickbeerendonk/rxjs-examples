@@ -1,15 +1,21 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2021 Rick Beerendonk          !*/
 
-const { Observable } = require('../../node_modules/rxjs');
-const { ajax } = require('../../node_modules/rxjs/ajax');
+import { ajax } from 'rxjs/ajax/index.js';
+import { XMLHttpRequest } from 'xmlhttprequest';
+
+function createXHR() {
+  return new XMLHttpRequest();
+}
 
 // Short:
 // const obs = ajax('https://jsonplaceholder.typicode.com/posts');
 
 // Long:
 const obs = ajax({
-  url: 'https://jsonplaceholder.typicode.com/posts'
+  createXHR,
+  url: 'https://jsonplaceholder.typicode.com/posts',
+  crossDomain: true
 });
 
 obs.subscribe(val => console.log(val));
