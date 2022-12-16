@@ -3,14 +3,14 @@
 
 import { generate } from 'rxjs';
 
-const obs = generate(
+const obs$ = generate(
   0, // initial
   x => x < 10, // condition
   x => x + 4, // iterate
   x => x + 1 // result
 );
 
-obs.subscribe(val => console.log(val));
+obs$.subscribe(val => console.log(val));
 
 // 1
 // 5

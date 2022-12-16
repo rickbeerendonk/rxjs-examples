@@ -3,9 +3,9 @@
 
 import { interval } from 'rxjs';
 
-const obs = interval(1000);
+const obs$ = interval(1000);
 
-obs.subscribe(val => console.log(val));
+obs$.subscribe(val => console.log(val));
 
 // 0 (after 1 second)
 // 1 (after 2 second)

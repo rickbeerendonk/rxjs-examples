@@ -3,9 +3,9 @@
 
 import { range } from 'rxjs';
 
-const obs = range(2, 3);
+const obs$ = range(2, 3);
 
-obs.subscribe({
+obs$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });

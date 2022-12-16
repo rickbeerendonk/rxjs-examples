@@ -3,9 +3,9 @@
 
 import { empty } from 'rxjs';
 
-const obs = empty();
+const obs$ = empty();
 
-obs.subscribe({
+obs$.subscribe({
   next: () => console.log('Next'),
   complete: () => console.log('Complete!')
 });

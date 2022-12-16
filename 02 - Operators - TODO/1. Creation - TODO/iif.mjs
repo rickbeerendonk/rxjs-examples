@@ -3,9 +3,9 @@
 
 import { iif, of } from 'rxjs';
 
-const obs1 = iif(() => false, of(1, 2, 3), of('a', 'b', 'c'));
+const obs1$ = iif(() => false, of(1, 2, 3), of('a', 'b', 'c'));
 
-obs1.subscribe({
+obs1$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });
@@ -15,9 +15,9 @@ obs1.subscribe({
 // c
 // Complete!
 
-const obs2 = iif(() => true, of(1, 2, 3), of('a', 'b', 'c'));
+const obs2$ = iif(() => true, of(1, 2, 3), of('a', 'b', 'c'));
 
-obs2.subscribe({
+obs2$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });

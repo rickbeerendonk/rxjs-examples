@@ -3,9 +3,9 @@
 
 import { timer } from 'rxjs';
 
-const obs = timer(3000);
+const obs$ = timer(3000);
 
-obs.subscribe({
+obs$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });

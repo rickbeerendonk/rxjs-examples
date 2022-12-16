@@ -3,9 +3,9 @@
 
 import { from } from 'rxjs';
 
-const obs = from([1, 3, 5]);
+const obs$ = from([1, 3, 5]);
 
-obs.subscribe({
+obs$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });

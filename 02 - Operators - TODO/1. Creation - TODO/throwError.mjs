@@ -3,8 +3,8 @@
 
 import { throwError } from 'rxjs';
 
-const obs = throwError(new Error('Something went wrong!'));
+const obs$ = throwError(new Error('Something went wrong!'));
 
-obs.subscribe({
+obs$.subscribe({
   error: err => console.error('Error message received: ' + err)
 });

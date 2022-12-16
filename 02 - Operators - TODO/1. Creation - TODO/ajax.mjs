@@ -9,15 +9,15 @@ function createXHR() {
 }
 
 // Short:
-// const obs = ajax('https://jsonplaceholder.typicode.com/posts');
+// const obs$ = ajax('https://jsonplaceholder.typicode.com/posts');
 
 // Long:
-const obs = ajax({
+const obs$ = ajax({
   createXHR,
   url: 'https://jsonplaceholder.typicode.com/posts',
   crossDomain: true
 });
 
-obs.subscribe(val => console.log(val));
+obs$.subscribe(val => console.log(val));
 
 // (list of posts)
