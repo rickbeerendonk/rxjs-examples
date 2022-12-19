@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "husky": "4.3.8",
-    "prettier": "2.3.1",
-    "rxjs": "6.6.7",
+    "prettier": "2.8.3",
+    "rxjs": "7.8.0",
     "xmlhttprequest": "1.8.0"
   }
 }
