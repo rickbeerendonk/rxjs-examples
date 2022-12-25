@@ -5,25 +5,25 @@
 
 import { Subject } from 'rxjs';
 
-const sub = new Subject();
+const sbj = new Subject();
 
-sub.next('one');
+sbj.next('one');
 
-sub.subscribe(value => {
+sbj.subscribe(value => {
   console.log('Subscriber 1:', value);
 });
 
-sub.next('two');
+sbj.next('two');
 
-sub.subscribe(x => {
+sbj.subscribe(x => {
   console.log('Subscriber 2:', x);
 });
 
-sub.next('three');
+sbj.next('three');
 
-sub.complete();
+sbj.complete();
 
-sub.next('four');
+sbj.next('four');
 
 // Subscriber 1: two
 // Subscriber 1: three

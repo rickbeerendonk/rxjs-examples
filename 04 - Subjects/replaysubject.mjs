@@ -8,21 +8,21 @@
 
 import { ReplaySubject } from 'rxjs';
 
-const sub = new ReplaySubject();
+const sbj = new ReplaySubject();
 
-sub.next('one');
+sbj.next('one');
 
-sub.subscribe(value => {
+sbj.subscribe(value => {
   console.log('Subscriber 1:', value);
 });
 
-sub.next('two');
+sbj.next('two');
 
-sub.subscribe(value => {
+sbj.subscribe(value => {
   console.log('Subscriber 2:', value);
 });
 
-sub.next('three');
+sbj.next('three');
 
 // Subscriber 1: one
 // Subscriber 1: two
