@@ -18,6 +18,8 @@ obs$.subscribe({
 });
 
 // Trigger event
-myEventEmitter.emit('dummyEvent', 'Dummy Data');
+myEventEmitter.emit('dummyEvent', 'Dummy 1');
+myEventEmitter.emit('dummyEvent', 'Dummy 2');
 
-// Dummy Data
+// Dummy 1
+// Dummy 2
