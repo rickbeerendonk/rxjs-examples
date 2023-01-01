@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- European Union Public License version 1.2 -->
+<!-- Copyright © 2022 Rick Beerendonk          -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "rxjs/ajax": "https://unpkg.com/rxjs@7.8.0/dist/esm/ajax/index.js",
+          "tslib": "https://unpkg.com/tslib@2.4.1/tslib.es6.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import { ajax } from 'rxjs/ajax';
+
+      const ulElem = document.querySelector('ul');
+
+      // Short:
+      // const obs$ = ajax('https://jsonplaceholder.typicode.com/posts');
+
+      // Long:
+      const obs$ = ajax({
+        method: 'GET',
+        responseType: 'json',
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        crossDomain: true
+      });
+
+      obs$.subscribe(val => {
+        for (const item of val.response) {
+          ulElem.innerHTML += `<li>${JSON.stringify(item)}</li>`;
+        }
+      });
+    </script>
+  </body>
+</html>
