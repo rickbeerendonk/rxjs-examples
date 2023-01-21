@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- European Union Public License version 1.2 -->
+<!-- Copyright © 2022 Rick Beerendonk          -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>
+      Type something and observe the console:
+      <input />
+    </label>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "rxjs": "https://unpkg.com/rxjs@7.8.0/dist/esm/index.js",
+          "tslib": "https://unpkg.com/tslib@2.4.1/tslib.es6.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import { fromEvent, debounceTime } from 'rxjs';
+
+      const elem = document.querySelector('input');
+
+      const obs$ = fromEvent(elem, 'keyup').pipe(debounceTime(300));
+
+      obs$.subscribe({
+        next: ev => console.log(ev.target.value),
+        complete: () => console.log('Complete!')
+      });
+    </script>
+  </body>
+</html>
