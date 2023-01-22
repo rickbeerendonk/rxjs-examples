@@ -3,11 +3,13 @@
 
 import { Observable } from 'rxjs';
 
-const obs$ = Observable.create(function (observer) {
-  observer.next('One');
-  observer.next('Two');
-  observer.complete();
+const obs$ = Observable.create(subscriber => {
+  subscriber.next('One');
+  subscriber.next('Two');
+  subscriber.complete();
 });
+
+// -One-Two|
 
 obs$.subscribe(val => console.log(val));
 

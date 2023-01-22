@@ -1,7 +1,7 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2022 Rick Beerendonk          !*/
 
-// Subject = Type of Observable which shares a single execution path among observers
+// Subject = Type of Observable which shares a single execution path among subscribers
 
 import { Subject } from 'rxjs';
 
