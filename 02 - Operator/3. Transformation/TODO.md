@@ -10,7 +10,6 @@ exhaustMap
 expand
 groupBy
 map
-mapTo
 mergeMap
 mergeMapTo
 mergeScan
