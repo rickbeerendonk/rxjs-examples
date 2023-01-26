@@ -3,7 +3,7 @@
 
 import { of, takeWhile } from 'rxjs';
 
-const obs$ = of(1, 2, 3, 4, 5).pipe(takeWhile(val => val < 4));
+const obs$ = of(1, 2, 3, 4, 2, 1).pipe(takeWhile(val => val < 4));
 
 obs$.subscribe({
   next: val => console.log(val),
