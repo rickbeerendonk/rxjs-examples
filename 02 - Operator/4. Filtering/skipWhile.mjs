@@ -3,7 +3,7 @@
 
 import { of, skipWhile } from 'rxjs';
 
-const obs$ = of(1, 2, 3, 4, 5).pipe(skipWhile(val => val < 4));
+const obs$ = of(1, 2, 3, 4, 2, 5).pipe(skipWhile(val => val < 4));
 
 obs$.subscribe({
   next: val => console.log(val),
@@ -11,5 +11,6 @@ obs$.subscribe({
 });
 
 // 4
+// 2
 // 5
 // Complete!
