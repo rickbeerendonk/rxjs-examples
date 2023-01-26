@@ -9,3 +9,5 @@ obs$.subscribe({
   next: () => console.log('Next'),
   complete: () => console.log('Complete!')
 });
+
+// Complete!
