@@ -1,4 +1,0 @@
-count
-max
-min
-reduce
