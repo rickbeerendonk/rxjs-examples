@@ -5,6 +5,9 @@ import { iif, of } from 'rxjs';
 
 const obs1$ = iif(() => false, of(1, 2, 3), of('a', 'b', 'c'));
 
+// MARBLES:
+// -a-b-c|
+
 obs1$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
@@ -16,6 +19,9 @@ obs1$.subscribe({
 // Complete!
 
 const obs2$ = iif(() => true, of(1, 2, 3), of('a', 'b', 'c'));
+
+// MARBLES:
+// -1-2-3|
 
 obs2$.subscribe({
   next: val => console.log(val),

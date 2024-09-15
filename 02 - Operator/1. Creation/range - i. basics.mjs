@@ -5,6 +5,9 @@ import { range } from 'rxjs';
 
 const obs$ = range();
 
+// MARBLES:
+// |
+
 obs$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')

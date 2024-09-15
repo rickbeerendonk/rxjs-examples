@@ -5,6 +5,9 @@ import { interval } from 'rxjs';
 
 const obs$ = interval(1000);
 
+// MARBLES:
+// -0-1-2-3-...
+
 obs$.subscribe(val => console.log(val));
 
 // 0 (after 1 second)

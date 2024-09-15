@@ -10,6 +10,9 @@ const obs$ = generate(
   x => x + 1 // result
 );
 
+// MARBLES:
+// -1-5-9|
+
 obs$.subscribe(val => console.log(val));
 
 // 1

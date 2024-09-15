@@ -5,6 +5,9 @@ import { EMPTY } from 'rxjs';
 
 const obs$ = EMPTY;
 
+// MARBLES:
+// |
+
 obs$.subscribe({
   next: () => console.log('Next'),
   complete: () => console.log('Complete!')

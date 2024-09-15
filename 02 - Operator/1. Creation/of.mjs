@@ -5,6 +5,9 @@ import { of } from 'rxjs';
 
 const obs$ = of(1, 2, 3, 'a', 'b', 'c');
 
+// MARBLES:
+// -1-2-3-a-b-c-|
+
 obs$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
