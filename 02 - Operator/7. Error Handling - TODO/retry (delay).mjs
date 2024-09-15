@@ -1,8 +1,8 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2024 Rick Beerendonk          !*/
 
-import { of, throwError } from 'rxjs';
-import { retry, catchError, map } from 'rxjs/operators';
+import { of, timer } from 'rxjs';
+import { retry, catchError, map, delayWhen, take } from 'rxjs/operators';
 
 let attempt = 0;
 
@@ -17,19 +17,35 @@ const obs$ = of('Request').pipe(
       return `Attempt ${attempt}: Success`;
     }
   }),
-  retry(2), // Retry up to 2 times
+  retry({
+    count: 2,
+    delay: 1000
+  }),
   catchError(err => of(`Final Error after ${attempt} attempts: ${err.message}`))
 );
 
 // Marbles diagram:
-// obs$: ---# retry(2) ---# retry(1) ---'Attempt 3: Success'---|
+
+// First Attempt:
+// obs$: ---#
+// retry delays 1s
+// Second Attempt:
+// obs$:    ---1s---#
+// retry delays 1s
+// Third Attempt:
+// obs$:           ---1s---'Attempt 3: Success'---|
+
 // If all retries fail:
-// obs$: ---# ---# ---# 'Final Error after 3 attempts: Attempt 3: Failed'---|
+// obs$:           ---1s---#
+//                     retryWhen completes
+// obs$: ---1s---1s---#
+// catchError handles the error
 
 obs$.subscribe({
   next: val => console.log(val),
   complete: () => console.log('Complete!')
 });
 
+// (After ~2 seconds)
 // Attempt 3: Success
 // Complete!
