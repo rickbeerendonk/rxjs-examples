@@ -1,4 +1,5 @@
-combineAll
+combineLatest
+combineLatestAll
 concatAll
 exhaust
 mergeAll
