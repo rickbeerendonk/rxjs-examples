@@ -21,3 +21,13 @@ obs$.subscribe({
 // One
 // Two
 // Complete!
+
+obs$.subscribe({
+  next: val => console.log(val),
+  error: err => console.error(err),
+  complete: () => console.log('Complete!')
+});
+
+// One
+// Two
+// Complete!
