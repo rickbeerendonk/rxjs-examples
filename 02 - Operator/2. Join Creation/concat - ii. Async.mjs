@@ -20,7 +20,7 @@ obs$.subscribe({
 // 1 (after 1000 ms)
 // 3 (after 2000 ms)
 // 5 (after 3000 ms)
-// 2 (after 34000 ms)
+// 2 (after 3400 ms)
 // 4 (after 3800 ms)
 // 6 (after 4200 ms)
 // Complete!
