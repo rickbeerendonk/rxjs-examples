@@ -2,10 +2,11 @@
 /*! Copyright © 2020 Rick Beerendonk          !*/
 
 import { from } from 'rxjs';
-import { scan } from 'rxjs/operators';
+import { reduce, scan } from 'rxjs/operators';
 
 const obs1$ = from([1, 2, 3, 4]);
 const obs2$ = obs1$.pipe(scan((acc, value, index) => acc + value));
+//const obs2$ = obs1$.pipe(reduce((acc, value, index) => acc + value));
 
 obs2$.subscribe({
   next: val => console.log(val),
