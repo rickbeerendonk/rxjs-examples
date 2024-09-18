@@ -10,5 +10,5 @@ obs$.subscribe({
   complete: () => console.log('Complete!')
 });
 
-// a
+// c
 // Complete!
