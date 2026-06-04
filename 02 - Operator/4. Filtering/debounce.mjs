@@ -4,10 +4,10 @@
 import { interval, timer } from 'rxjs';
 import { debounce, take } from 'rxjs/operators';
 
-interval(40)
+interval(400)
   .pipe(
     take(6),
-    debounce(value => timer(value < 4 ? 50 : 10))
+    debounce(value => timer(value < 4 ? 500 : 10))
   )
   .subscribe({
     next: val => console.log(val),
