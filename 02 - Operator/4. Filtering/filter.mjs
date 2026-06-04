@@ -4,6 +4,7 @@
 import { of, filter } from 'rxjs';
 
 const obs$ = of(1, 6, 2, 5, 3, 4).pipe(filter(value => value < 4));
+//const obs$ = of(1, 6, 2, 5, 3, 4).pipe(filter((value, index) => index % 2));
 
 obs$.subscribe({
   next: val => console.log(val),
